@@ -1,38 +1,22 @@
-.App {
-  text-align: center;
+body {
+  background-image: url("https://us.123rf.com/450wm/igordabari/igordabari1609/igordabari160900195/63547547-resumen-de-la-astronom%C3%ADa-universo-espacio-de-fondo-negro-cielo-nocturno-con-las-estrellas-se-puede-u.jpg?ver=6");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1  {
+  color: rgba(255, 174, 0, 0.959);
+  text-decoration: underline;
+}
+h5{
+  text-decoration: underline;
+}
+.card-body {
+  background-color: rgb(190, 187, 187);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ b {
+  color: rgb(216, 141, 2);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scrolling-wrapper{
+	overflow-x: auto;
+  padding-bottom: 5rem;
 }
