@@ -6,7 +6,11 @@ import {FaRegTrashAlt} from "react-icons/fa";
 
 const Navbar = (props) => {
 
-  const {store, actions}= useContext(Context)
+
+  const { store, actions } = useContext(Context);
+    const deleteTask = (key) => {
+        actions.deleteFavorite(key);
+    }
 
 
 
@@ -24,10 +28,10 @@ const Navbar = (props) => {
           Favorites {store.favorites.length} 
         </a>
         <div className="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
-          {store.favorites.map((item, id) => { 
-            
-            return  <li className="dropdown-item" href="/#" key = {id}> {item} <button onClick= {() => actions.deleteFavorite(item)} className="btn btn-warning btn-sm float-right"><FaRegTrashAlt/></button></li>
-          })}  
+        {(store.favorites.length===0) ? <li className="dropdown-item text-center">(empty)</li>: 
+                            store.favorites.map((item, index) => <li className="dropdown-item" key={index}>{item}<span className="ps-5"><button onClick={() => {
+                                deleteTask(index);
+                            }} className="pl-1 ml-3 btn-warning"><i className="bi bi-x"></i><FaRegTrashAlt /></button> </span></li>)} 
         </div>
       </li>
     </ul>

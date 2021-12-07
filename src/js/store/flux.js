@@ -34,18 +34,24 @@ const getState = ({ getStore, getActions, setStore }) => {
             
             addFavorite: (newItem) => {
 				const storeCopy = getStore();
+                const exist = storeCopy.favorites.includes(newItem)
 				const newFavorites = storeCopy.favorites.concat(newItem);
-                setStore({favorites: newFavorites});
+                if (exist) {
+                    alert("Ya existe el favorito")
+                }else {
+                    setStore({favorites: newFavorites});
+                }
+                
 				
 			},
 
             deleteFavorite: (id) => {
                 const store = getStore()
-                const newFavorites = [...store.favorites];
-                newFavorites.splice(id);
-                setStore({favorites: newFavorites});
-
-            },
+                const nuevoArray = store.favorites.filter((item, indice) => {
+                return indice !== id 
+              }) 
+              setStore({favorites: nuevoArray})
+             },
 			 /* deleteFavorite: (item) => {
 				const storeCopy = getStore();
                 setStore({favorites: storeCopy.favorites.filter((favorite, item) => {
