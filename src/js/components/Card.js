@@ -17,10 +17,7 @@ const Card = (props) => {
             <p><b>Mass:</b> {props.peso}</p>
             <p><b>Eyes color:</b> {props.eyeColor}</p>
           </p>
-          <Link to="/single" className="btn btn-outline-primary">
-              Learn more
-             
-            </Link> 
+          <Link to={"/infopeople?nombre=" + props.data + "&gender=" + props.genero + "&mass=" + props.peso + "&eyeColor=" + props.eyeColor } className="btn btn-outline-primary">Learn More!</Link> 
             <button onClick= {() => actions.addFavorite(props.data)} className="btn btn-warning btn-sm float-right"><FaHeart/></button>
 
         </div>

@@ -5,7 +5,9 @@ import Home from "./js/views/Home";
 import Navbar from "./js/components/Navbar";
 import injectContext from "./js/store/appContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Singlecard from "./js/views/SingleCard";
+//import Singlecard from "./js/views/SingleCard";
+import InfoPlanets from "./js/views/InfoPlanets";
+import InfoPeople from "./js/views/InfoPeople";
 
 
 const App = () => {
@@ -16,8 +18,12 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/single">
-          <Singlecard />
+        <Route exact path = "/infoplanet/">
+                <InfoPlanets />
+            </Route>
+
+        <Route exact path = "/infopeople/">
+            <InfoPeople />
         </Route>
         <Route render={()=> <h1> Not Found</h1>}></Route>
       </Switch>

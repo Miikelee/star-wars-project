@@ -5,12 +5,14 @@ const getState = ({ getStore, getActions, setStore }) => {
             peoples: [],
             vehicles: [],
             favorites: [],
+            info: {}
             
             
 			
 		},
 		actions: {
             getPlanets: () => {
+                
                 fetch("https://swapi.dev/api/planets", {
                     method:"GET",
                     headers: {"Content-Type": "application/json"}
@@ -45,6 +47,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 			},
 
+            getInfoPlanet: (a) => {
+                const actions = getActions();
+                let url = 'https://swapi.dev/api/planets/' + a;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        actions.getData(data);
+                    })
+            },
+
+            getInfoPeople: (a) => {
+                const actions = getActions();
+                let url = 'https://swapi.dev/api/people/' + a;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        actions.getData(data);
+                    })
+            },
+
+            getInfoPeople: (a) => {
+                const actions = getActions();
+                let url = 'https://swapi.dev/api/people/' + a;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        actions.getData(data);
+                    })
+            },
+
+            getData: (data) => {
+                setStore({ info: data })
+            },
+
             deleteFavorite: (id) => {
                 const store = getStore()
                 const nuevoArray = store.favorites.filter((item, indice) => {
@@ -52,6 +91,8 @@ const getState = ({ getStore, getActions, setStore }) => {
               }) 
               setStore({favorites: nuevoArray})
              },
+
+             
 			 /* deleteFavorite: (item) => {
 				const storeCopy = getStore();
                 setStore({favorites: storeCopy.favorites.filter((favorite, item) => {
