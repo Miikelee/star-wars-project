@@ -17,10 +17,7 @@ const CardVehicles = (props) => {
               <p><b>cargo capacity:</b> {props.capacity} </p>
               <p><b>vehicle class:</b> {props.class} </p>
             </p>
-            <Link to="/single" className="btn btn-outline-primary">
-              Learn more
-             
-            </Link> 
+            <Link to={"/infovehicles?nombre=" + props.data + "&model=" + props.model + "&capacity=" + props.capacity + "&class=" + props.class } className="btn btn-outline-primary">Detalles</Link> 
             <button onClick= {() => actions.addFavorite(props.data)} className="btn btn-warning btn-sm float-right"><FaHeart/></button>
   
           </div>

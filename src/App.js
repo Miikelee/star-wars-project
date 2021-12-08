@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import Singlecard from "./js/views/SingleCard";
 import InfoPlanets from "./js/views/InfoPlanets";
 import InfoPeople from "./js/views/InfoPeople";
+import InfoVehicles from "./js/views/InfoVehicles"
 
 
 const App = () => {
@@ -25,6 +26,11 @@ const App = () => {
         <Route exact path = "/infopeople/">
             <InfoPeople />
         </Route>
+
+        <Route exact path = "/infovehicles/">
+            <InfoVehicles />
+        </Route>
+
         <Route render={()=> <h1> Not Found</h1>}></Route>
       </Switch>
     </Router>

@@ -17,7 +17,7 @@ const CardPlanets = (props) => {
               <p><b>climate:</b> {props.climate} </p>
               <p><b>terrain: </b>{props.terrain} </p>
             </p>
-            <Link to={"/infoplanet?nombre=" + props.data + "&climate=" + props.climate + "&diameter=" + props.diameter + "&terrain=" + props.terrain } className="btn btn-outline-primary">Learn More!</Link>
+            <Link to={"/infoplanet?nombre=" + props.data + "&climate=" + props.climate + "&diameter=" + props.diameter + "&terrain=" + props.terrain } className="btn btn-outline-primary">Detalles</Link>
             <button onClick= {() => actions.addFavorite(props.data)} className="btn btn-warning btn-sm float-right"><FaHeart/></button>
             
   
